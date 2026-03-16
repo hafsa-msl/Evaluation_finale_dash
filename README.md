@@ -1,4 +1,4 @@
-# Application Dash - Avocado Data
+# Application Dash 
 
 Application Dash pour visualiser les ventes d'avocats aux États-Unis.
 

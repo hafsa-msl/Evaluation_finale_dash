@@ -9,14 +9,26 @@ def make_figure(region, y_range):
     filtered = df[df["region"] == region].sort_values("Date")
     fig = go.Figure()
     fig.add_trace(
-        go.Scatter(x=filtered["Date"], y=filtered["AveragePrice"], mode="lines")
+        go.Scatter(
+            x=filtered["Date"],
+            y=filtered["AveragePrice"],
+            mode="lines",
+            line=dict(color="#2c3e6b", width=1),
+            hoverinfo="skip",
+        )
     )
     fig.update_layout(
         title=f"Prix moyen dans le temps - {region}",
         xaxis_title="Date",
-        yaxis_title="Prix moyen ($)",
-        yaxis=dict(range=y_range),
+        yaxis=dict(range=y_range, title=""),
+        margin=dict(t=40, b=40, l=40, r=20),
+        plot_bgcolor="white",
+        paper_bgcolor="white",
+        hovermode=False,
+        showlegend=False,
     )
+    fig.update_xaxes(showgrid=True, gridcolor="#e0e0e0", zeroline=False)
+    fig.update_yaxes(showgrid=True, gridcolor="#e0e0e0", zeroline=False)
     return fig
 
 
@@ -27,7 +39,6 @@ def make_figure(region, y_range):
     Input("region2-dropdown", "value"),
 )
 def update_graphs(region1, region2):
-    # Même échelle Y pour les deux graphiques
     r1 = df[df["region"] == region1]["AveragePrice"]
     r2 = df[df["region"] == region2]["AveragePrice"]
     y_range = [min(r1.min(), r2.min()) - 0.1, max(r1.max(), r2.max()) + 0.1]

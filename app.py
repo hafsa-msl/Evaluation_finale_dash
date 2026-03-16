@@ -1,7 +1,5 @@
 import dash
 import dash_bootstrap_components as dbc
-
-# Import des modules callbacks (requis avec use_pages=True)
 import pages.table_cb
 import pages.compare_cb
 

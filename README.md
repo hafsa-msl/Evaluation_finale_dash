@@ -16,19 +16,27 @@ python app.py
 
 Ouvrir le navigateur sur : http://127.0.0.1:8050
 
+## Pages
+
+| Page | Description |
+|------|-------------|
+| Affichage des données | Tableau filtrable par région et type d'avocat |
+| Comparaison entre régions | Graphiques côte à côte du prix moyen dans le temps |
+| Aide en ligne | Documentation présentée sous forme d'accordion |
+
 ## Structure du projet
 
 ```
-├── app.py              # Point d'entrée de l'application
+├── app.py                  # Point d'entrée de l'application
 ├── pages/
-│   ├── table.py        # Page 1 : layout tableau filtrable
-│   ├── table_cb.py     # Page 1 : callbacks
-│   ├── compare.py      # Page 2 : layout comparaison régions
-│   ├── compare_cb.py   # Page 2 : callbacks
-│   └── markdown.py     # Page 3 : accordion Markdown
-├── assets/             # CSS et ressources statiques
+│   ├── table.py            # Page 1 : layout tableau filtrable
+│   ├── table_cb.py         # Page 1 : callbacks
+│   ├── compare.py          # Page 2 : layout comparaison régions
+│   ├── compare_cb.py       # Page 2 : callbacks
+│   └── markdown.py         # Page 3 : accordion Markdown
+├── assets/                 # CSS et ressources statiques
 ├── datas/
-│   └── avocado.csv     # Jeu de données
+│   └── avocado.csv         # Jeu de données
 ├── expli1.md
 ├── expli2.md
 ├── expli3.md
